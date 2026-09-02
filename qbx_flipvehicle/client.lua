@@ -40,3 +40,25 @@ end
 exports('flipVehicle', flipVehicle)
 
 exports('FlipVehicle', flipVehicle)
+
+exports.ox_target:addGlobalVehicle({
+    {
+        name = 'flip_vehicle',
+        icon = 'fa-solid fa-car-burst',
+        label = 'Flip Vehicle',
+        distance = 2.5,
+
+        canInteract = function(entity)
+            if IsPedInAnyVehicle(PlayerPedId(), false) then
+                return false
+            end
+
+            local roll = GetEntityRoll(entity)
+            return math.abs(roll) > 60.0
+        end,
+
+        onSelect = function()
+            flipVehicle()
+        end
+    }
+})
