@@ -1,4 +1,7 @@
 local config = lib.loadJson('qbx_removeentities.config')
+if not config or not config.objects or #config.objects == 0 then
+    return
+end
 
 CreateThread(function()
     while true do
