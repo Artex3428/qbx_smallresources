@@ -7,7 +7,6 @@ CreateThread(function()
     for i = 1, #disableHudComponents do
         SetHudComponentSize(disableHudComponents[i],0.0,0.0)
     end
-
     while true do
         for i = 1, #disableControls do
             DisableControlAction(2, disableControls[i], true)
