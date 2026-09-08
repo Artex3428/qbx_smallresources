@@ -25,6 +25,7 @@ end)
 CreateThread(function() -- all these should only need to be called once
     if config.disable.ambience then
         StartAudioScene('CHARACTER_CHANGE_IN_SKY_SCENE')
+        SetAudioFlag('DisableFlightMusic', true)
     end
     SetAudioFlag('PoliceScannerDisabled', true)
     SetGarbageTrucks(false)
